@@ -1,0 +1,188 @@
+<!--
+  Settings screen for TESTIMX QA Quiz.  Allows the user to toggle
+  dark theme, haptics/sound and automatic explanation popups.  Also
+  provides About and Privacy links and a bottom navigation bar.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Settings – TESTIMX QA Quiz</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary-color: #ff6600;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-[#1C1C1E]">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-[#121212] justify-between group/design-root overflow-x-hidden"
+      style="font-family: 'Space Grotesk', 'Noto Sans', sans-serif;"
+    >
+      <div class="flex flex-col">
+        <header
+          class="flex items-center p-4 justify-between sticky top-0 z-10 bg-[#121212]/80 backdrop-blur-sm"
+        >
+          <button
+            class="text-white flex size-10 shrink-0 items-center justify-center rounded-full"
+          >
+            <span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+          </button>
+          <h1
+            class="text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10"
+          >
+            Settings
+          </h1>
+        </header>
+        <main class="flex-1 px-4 pt-4 space-y-2">
+          <div class="bg-[#1C1C1E] rounded-xl">
+            <div
+              class="flex items-center gap-4 px-4 py-3 justify-between"
+            >
+              <p
+                class="text-white text-base font-normal leading-normal flex-1 truncate"
+              >
+                Dark Theme
+              </p>
+              <div class="shrink-0">
+                <label
+                  class="relative flex h-8 w-14 cursor-pointer items-center rounded-full border-none bg-zinc-700 p-1 transition-colors has-[:checked]:bg-[var(--primary-color)]"
+                >
+                  <div
+                    class="h-6 w-6 rounded-full bg-white transition-transform transform translate-x-0 checked:translate-x-6"
+                  ></div>
+                  <input class="peer sr-only" type="checkbox" />
+                  <span
+                    class="absolute left-1 h-6 w-6 rounded-full bg-white transition-transform duration-300 ease-in-out peer-checked:translate-x-6"
+                  ></span>
+                </label>
+              </div>
+            </div>
+            <hr class="border-zinc-700 ml-4" />
+            <div
+              class="flex items-center gap-4 px-4 py-3 justify-between"
+            >
+              <p
+                class="text-white text-base font-normal leading-normal flex-1 truncate"
+              >
+                Haptics &amp; Sound
+              </p>
+              <div class="shrink-0">
+                <label
+                  class="relative flex h-8 w-14 cursor-pointer items-center rounded-full border-none bg-zinc-700 p-1 transition-colors has-[:checked]:bg-[var(--primary-color)]"
+                >
+                  <input class="peer sr-only" type="checkbox" />
+                  <span
+                    class="absolute left-1 h-6 w-6 rounded-full bg-white transition-transform duration-300 ease-in-out peer-checked:translate-x-6"
+                  ></span>
+                </label>
+              </div>
+            </div>
+            <hr class="border-zinc-700 ml-4" />
+            <div
+              class="flex items-center gap-4 px-4 py-3 justify-between"
+            >
+              <p
+                class="text-white text-base font-normal leading-normal flex-1 truncate max-w-xs"
+              >
+                Auto-open explanation popup on incorrect answers
+              </p>
+              <div class="shrink-0">
+                <label
+                  class="relative flex h-8 w-14 cursor-pointer items-center rounded-full border-none bg-zinc-700 p-1 transition-colors has-[:checked]:bg-[var(--primary-color)]"
+                >
+                  <input checked class="peer sr-only" type="checkbox" />
+                  <span
+                    class="absolute left-1 h-6 w-6 rounded-full bg-white transition-transform duration-300 ease-in-out peer-checked:translate-x-6"
+                  ></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#1C1C1E] rounded-xl">
+            <a
+              class="flex items-center gap-4 px-4 py-3 justify-between"
+              href="#"
+            >
+              <p
+                class="text-white text-base font-normal leading-normal flex-1 truncate"
+              >
+                About
+              </p>
+              <div class="shrink-0">
+                <span class="material-symbols-outlined text-zinc-500"
+                  >arrow_forward_ios</span
+                >
+              </div>
+            </a>
+            <hr class="border-zinc-700 ml-4" />
+            <a
+              class="flex items-center gap-4 px-4 py-3 justify-between"
+              href="#"
+            >
+              <p
+                class="text-white text-base font-normal leading-normal flex-1 truncate"
+              >
+                Privacy
+              </p>
+              <div class="shrink-0">
+                <span class="material-symbols-outlined text-zinc-500"
+                  >arrow_forward_ios</span
+                >
+              </div>
+            </a>
+          </div>
+        </main>
+      </div>
+      <footer class="sticky bottom-0 bg-[#1C1C1E]/90 backdrop-blur-lg">
+        <div
+          class="flex justify-around items-center py-2 px-4 border-t border-zinc-800"
+        >
+          <a
+            class="flex flex-col items-center justify-center gap-1 text-zinc-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-2xl">home</span>
+            <p class="text-xs font-medium">Home</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center gap-1 text-zinc-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-2xl">bar_chart</span>
+            <p class="text-xs font-medium">Progress</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center gap-1 text-[var(--primary-color)]"
+            href="#"
+          >
+            <span
+              class="material-symbols-outlined text-2xl"
+              style="font-variation-settings: 'FILL' 1;"
+              >settings</span
+            >
+            <p class="text-xs font-medium">Settings</p>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

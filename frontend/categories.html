@@ -1,0 +1,232 @@
+<!--
+  Category selection screen for TESTIMX QA Quiz.  Lists all
+  available categories with their item counts and provides a "Start"
+  button for each.  The layout is responsive and uses TailwindCSS.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+      onload="this.rel='stylesheet'"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Category Selection – TESTIMX QA Quiz</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary-500: #ff6600;
+        --neutral-900: #1a1a1a;
+        --neutral-800: #262626;
+        --neutral-700: #434343;
+        --neutral-400: #a3a3a3;
+        --neutral-50: #fafafa;
+        --primary-600: #e65c00;
+      }
+      .icon-filled {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--neutral-900)]">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col dark justify-between group/design-root overflow-x-hidden"
+      style="font-family: 'Space Grotesk', 'Noto Sans', sans-serif;"
+    >
+      <div class="flex-grow">
+        <header
+          class="flex items-center justify-between p-4 sticky top-0 bg-[var(--neutral-900)] z-10"
+        >
+          <button class="text-white">
+            <span class="material-symbols-outlined text-3xl"> menu </span>
+          </button>
+          <h1 class="text-white text-xl font-bold">TESTIMX QA Quiz</h1>
+          <div></div>
+        </header>
+        <main class="p-4 grid grid-cols-1 @container sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Category cards -->
+          <div
+            class="bg-[var(--neutral-800)] rounded-2xl shadow-lg flex flex-col overflow-hidden"
+          >
+            <div class="p-5 flex-grow">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="bg-[var(--neutral-700)] p-3 rounded-full">
+                  <span
+                    class="material-symbols-outlined text-[var(--primary-500)]"
+                  >
+                    smart_toy
+                  </span>
+                </div>
+                <div>
+                  <h2 class="text-white text-lg font-bold">AI Testing Quiz</h2>
+                  <p class="text-[var(--neutral-400)] text-sm">Master AI Testing</p>
+                </div>
+              </div>
+              <p class="text-[var(--neutral-400)] text-sm mb-4">
+                Learn AI testing techniques and tools.
+              </p>
+              <div
+                class="flex justify-between items-center text-xs text-[var(--neutral-400)]"
+              >
+                <p>25 items</p>
+              </div>
+            </div>
+            <button
+              class="w-full bg-[var(--primary-500)] hover:bg-[var(--primary-600)] text-white font-bold py-3 px-5 transition-colors duration-300"
+            >
+              Start
+            </button>
+          </div>
+          <div
+            class="bg-[var(--neutral-800)] rounded-2xl shadow-lg flex flex-col overflow-hidden"
+          >
+            <div class="p-5 flex-grow">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="bg-[var(--neutral-700)] p-3 rounded-full">
+                  <span
+                    class="material-symbols-outlined text-[var(--primary-500)]"
+                  >
+                    verified
+                  </span>
+                </div>
+                <div>
+                  <h2 class="text-white text-lg font-bold">ISTQB Quiz</h2>
+                  <p class="text-[var(--neutral-400)] text-sm">
+                    ISTQB Certification Prep
+                  </p>
+                </div>
+              </div>
+              <p class="text-[var(--neutral-400)] text-sm mb-4">
+                Prepare for ISTQB certification exams.
+              </p>
+              <div
+                class="flex justify-between items-center text-xs text-[var(--neutral-400)]"
+              >
+                <p>50 items</p>
+              </div>
+            </div>
+            <button
+              class="w-full bg-[var(--primary-500)] hover:bg-[var(--primary-600)] text-white font-bold py-3 px-5 transition-colors duration-300"
+            >
+              Start
+            </button>
+          </div>
+          <div
+            class="bg-[var(--neutral-800)] rounded-2xl shadow-lg flex flex-col overflow-hidden"
+          >
+            <div class="p-5 flex-grow">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="bg-[var(--neutral-700)] p-3 rounded-full">
+                  <span
+                    class="material-symbols-outlined text-[var(--primary-500)]"
+                  >
+                    code
+                  </span>
+                </div>
+                <div>
+                  <h2 class="text-white text-lg font-bold">Java Quiz</h2>
+                  <p class="text-[var(--neutral-400)] text-sm">
+                    Java Programming
+                  </p>
+                </div>
+              </div>
+              <p class="text-[var(--neutral-400)] text-sm mb-4">
+                Test your Java programming knowledge.
+              </p>
+              <div
+                class="flex justify-between items-center text-xs text-[var(--neutral-400)]"
+              >
+                <p>40 items</p>
+              </div>
+            </div>
+            <button
+              class="w-full bg-[var(--primary-500)] hover:bg-[var(--primary-600)] text-white font-bold py-3 px-5 transition-colors duration-300"
+            >
+              Start
+            </button>
+          </div>
+          <div
+            class="bg-[var(--neutral-800)] rounded-2xl shadow-lg flex flex-col overflow-hidden"
+          >
+            <div class="p-5 flex-grow">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="bg-[var(--neutral-700)] p-3 rounded-full">
+                  <span
+                    class="material-symbols-outlined text-[var(--primary-500)]"
+                  >
+                    biotech
+                  </span>
+                </div>
+                <div>
+                  <h2 class="text-white text-lg font-bold">Selenium Quiz</h2>
+                  <p class="text-[var(--neutral-400)] text-sm">
+                    Selenium Automation
+                  </p>
+                </div>
+              </div>
+              <p class="text-[var(--neutral-400)] text-sm mb-4">
+                Practice Selenium automation skills.
+              </p>
+              <div
+                class="flex justify-between items-center text-xs text-[var(--neutral-400)]"
+              >
+                <p>35 items</p>
+              </div>
+            </div>
+            <button
+              class="w-full bg-[var(--primary-500)] hover:bg-[var(--primary-600)] text-white font-bold py-3 px-5 transition-colors duration-300"
+            >
+              Start
+            </button>
+          </div>
+        </main>
+      </div>
+      <footer
+        class="sticky bottom-0 bg-[var(--neutral-800)] border-t border-[var(--neutral-700)] rounded-t-2xl"
+      >
+        <nav class="flex justify-around p-2">
+          <a
+            class="flex flex-col items-center justify-end gap-1 text-[var(--primary-500)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined icon-filled">home</span>
+            <p class="text-xs font-medium">Home</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 text-[var(--neutral-400)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined">trending_up</span>
+            <p class="text-xs font-medium">Progress</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 text-[var(--neutral-400)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined">admin_panel_settings</span>
+            <p class="text-xs font-medium">Admin</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 text-[var(--neutral-400)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined">settings</span>
+            <p class="text-xs font-medium">Settings</p>
+          </a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

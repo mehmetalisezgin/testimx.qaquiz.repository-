@@ -1,0 +1,247 @@
+<!--
+  Progress & history screen for TESTIMX QA Quiz.  Summarises
+  the user’s overall performance, streak and number of quizzes
+  completed.  Shows per‑category progress bars and a history
+  list of recent attempts.  Uses TailwindCSS for styling.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <title>Progress & History – TESTIMX QA Quiz</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary-color: #ff6600;
+        --background-color: #121212;
+        --surface-color: #1e1e1e;
+        --on-surface-color: #ffffff;
+        --secondary-text-color: #a0a0a0;
+      }
+      body {
+        background-color: var(--background-color);
+        color: var(--on-surface-color);
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--background-color)]">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col justify-between group/design-root overflow-x-hidden"
+      style="font-family: 'Space Grotesk', 'Noto Sans', sans-serif;"
+    >
+      <div>
+        <header
+          class="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-[var(--background-color)]"
+        >
+          <button
+            class="text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10"
+          >
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <h1
+            class="text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10"
+          >
+            Progress & History
+          </h1>
+        </header>
+        <div class="p-4">
+          <div class="grid grid-cols-3 gap-4">
+            <div
+              class="flex flex-col gap-1 rounded-xl bg-[var(--surface-color)] p-4 items-center text-center shadow-lg"
+            >
+              <p class="text-[var(--primary-color)] text-3xl font-bold">85%</p>
+              <p class="text-[var(--secondary-text-color)] text-sm font-normal">
+                Correct
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-1 rounded-xl bg-[var(--surface-color)] p-4 items-center text-center shadow-lg"
+            >
+              <p class="text-[var(--primary-color)] text-3xl font-bold">5</p>
+              <p class="text-[var(--secondary-text-color)] text-sm font-normal">
+                Streak
+              </p>
+            </div>
+            <div
+              class="flex flex-col gap-1 rounded-xl bg-[var(--surface-color)] p-4 items-center text-center shadow-lg"
+            >
+              <p class="text-[var(--primary-color)] text-3xl font-bold">12</p>
+              <p class="text-[var(--secondary-text-color)] text-sm font-normal">
+                Quizzes
+              </p>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-white text-lg font-bold px-4 pb-2 pt-4">Categories</h2>
+        <div class="flex flex-col gap-3 px-4">
+          <div
+            class="flex items-center justify-between gap-4 rounded-xl bg-[var(--surface-color)] p-4 shadow-lg"
+          >
+            <div class="flex flex-col gap-1">
+              <p class="text-white text-base font-bold">Automation</p>
+              <p class="text-[var(--secondary-text-color)] text-sm font-normal">
+                80% Correct
+              </p>
+            </div>
+            <div class="w-24 h-12">
+              <div
+                class="w-full h-full rounded-md bg-gray-700/50 flex items-end"
+              >
+                <div
+                  class="h-full bg-[var(--primary-color)] rounded-md"
+                  style="width: 80%;"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-between gap-4 rounded-xl bg-[var(--surface-color)] p-4 shadow-lg"
+          >
+            <div class="flex flex-col gap-1">
+              <p class="text-white text-base font-bold">Manual Testing</p>
+              <p class="text-[var(--secondary-text-color)] text-sm font-normal">
+                75% Correct
+              </p>
+            </div>
+            <div class="w-24 h-12">
+              <div
+                class="w-full h-full rounded-md bg-gray-700/50 flex items-end"
+              >
+                <div
+                  class="h-full bg-[var(--primary-color)] rounded-md"
+                  style="width: 75%;"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-between gap-4 rounded-xl bg-[var(--surface-color)] p-4 shadow-lg"
+          >
+            <div class="flex flex-col gap-1">
+              <p class="text-white text-base font-bold">Performance</p>
+              <p class="text-[var(--secondary-text-color)] text-sm font-normal">
+                90% Correct
+              </p>
+            </div>
+            <div class="w-24 h-12">
+              <div
+                class="w-full h-full rounded-md bg-gray-700/50 flex items-end"
+              >
+                <div
+                  class="h-full bg-[var(--primary-color)] rounded-md"
+                  style="width: 90%;"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-white text-lg font-bold px-4 pb-2 pt-6">History</h2>
+        <div class="flex flex-col">
+          <a
+            class="flex items-center gap-4 px-4 py-3 hover:bg-white/5 active:bg-white/10"
+            href="#"
+          >
+            <div class="flex-1">
+              <p class="text-white text-base font-medium">Automation Quiz</p>
+              <p class="text-[var(--secondary-text-color)] text-sm">
+                Jan 15, 2024
+              </p>
+            </div>
+            <div class="text-right">
+              <p class="text-white font-semibold">8/10</p>
+              <p class="text-green-500 text-sm">Correct</p>
+            </div>
+            <span class="material-symbols-outlined text-[var(--secondary-text-color)]"
+              >chevron_right</span
+            >
+          </a>
+          <div class="h-px bg-white/10 mx-4"></div>
+          <a
+            class="flex items-center gap-4 px-4 py-3 hover:bg-white/5 active:bg-white/10"
+            href="#"
+          >
+            <div class="flex-1">
+              <p class="text-white text-base font-medium">
+                Manual Testing Quiz
+              </p>
+              <p class="text-[var(--secondary-text-color)] text-sm">
+                Jan 10, 2024
+              </p>
+            </div>
+            <div class="text-right">
+              <p class="text-white font-semibold">7/10</p>
+              <p class="text-green-500 text-sm">Correct</p>
+            </div>
+            <span class="material-symbols-outlined text-[var(--secondary-text-color)]"
+              >chevron_right</span
+            >
+          </a>
+          <div class="h-px bg-white/10 mx-4"></div>
+          <a
+            class="flex items-center gap-4 px-4 py-3 hover:bg-white/5 active:bg-white/10"
+            href="#"
+          >
+            <div class="flex-1">
+              <p class="text-white text-base font-medium">
+                Performance Testing Quiz
+              </p>
+              <p class="text-[var(--secondary-text-color)] text-sm">
+                Jan 05, 2024
+              </p>
+            </div>
+            <div class="text-right">
+              <p class="text-white font-semibold">9/10</p>
+              <p class="text-green-500 text-sm">Correct</p>
+            </div>
+            <span class="material-symbols-outlined text-[var(--secondary-text-color)]"
+              >chevron_right</span
+            >
+          </a>
+        </div>
+      </div>
+      <footer
+        class="sticky bottom-0 bg-[var(--surface-color)] pb-safe-area-bottom shadow-lg"
+      >
+        <div class="flex justify-around border-t border-white/10 py-2">
+          <a
+            class="flex flex-col items-center justify-end gap-1 text-[var(--secondary-text-color)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-2xl">home</span>
+            <p class="text-xs font-medium">Home</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 text-[var(--primary-color)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-2xl">bar_chart</span>
+            <p class="text-xs font-medium">Progress</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 text-[var(--secondary-text-color)]"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-2xl">settings</span>
+            <p class="text-xs font-medium">Settings</p>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<!--
+  Score summary page for a completed quiz session.  Displays the
+  total score, percentage and time spent along with a per‑question
+  breakdown.  Provides actions for reviewing answers, retrying
+  the category or returning home.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Results – TESTIMX QA Quiz</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-[#1C1C1E]">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-[#1C1C1E] dark justify-between group/design-root overflow-x-hidden"
+      style="font-family: 'Space Grotesk', 'Noto Sans', sans-serif;"
+    >
+      <div class="flex-grow">
+        <header class="flex items-center p-4 pb-2 justify-between">
+          <button class="text-white">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+          <h2
+            class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-8"
+          >
+            Results
+          </h2>
+        </header>
+        <main class="px-4">
+          <div class="text-center my-8">
+            <div class="inline-block relative">
+              <svg
+                class="transform -rotate-90"
+                height="160"
+                width="160"
+                viewBox="0 0 120 120"
+              >
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="54"
+                  stroke="#363638"
+                  stroke-width="8"
+                  fill="none"
+                ></circle>
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="54"
+                  stroke="#FF6600"
+                  stroke-dasharray="339.292"
+                  stroke-dashoffset="101.7876"
+                  stroke-linecap="round"
+                  stroke-width="8"
+                  fill="none"
+                ></circle>
+              </svg>
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              >
+                <h1
+                  class="text-white tracking-light text-[32px] font-bold leading-tight"
+                >
+                  7/10
+                </h1>
+              </div>
+            </div>
+            <p class="text-[#A0A0A0] text-lg font-medium leading-normal mt-4">
+              70%
+            </p>
+            <p class="text-[#A0A0A0] text-sm font-normal leading-normal mt-1">
+              Time spent: 12m 30s
+            </p>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 1
+              </p>
+              <div class="flex items-center gap-2 text-[#4ADE80]">
+                <span class="text-sm font-medium">Correct</span>
+                <span class="material-symbols-outlined text-lg">check_circle</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 2
+              </p>
+              <div class="flex items-center gap-2 text-[#4ADE80]">
+                <span class="text-sm font-medium">Correct</span>
+                <span class="material-symbols-outlined text-lg">check_circle</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 3
+              </p>
+              <div class="flex items-center gap-2 text-[#4ADE80]">
+                <span class="text-sm font-medium">Correct</span>
+                <span class="material-symbols-outlined text-lg">check_circle</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 4
+              </p>
+              <div class="flex items-center gap-2 text-[#FF453A]">
+                <span class="text-sm font-medium">Incorrect</span>
+                <span class="material-symbols-outlined text-lg">cancel</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 5
+              </p>
+              <div class="flex items-center gap-2 text-[#4ADE80]">
+                <span class="text-sm font-medium">Correct</span>
+                <span class="material-symbols-outlined text-lg">check_circle</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 6
+              </p>
+              <div class="flex items-center gap-2 text-[#FF453A]">
+                <span class="text-sm font-medium">Incorrect</span>
+                <span class="material-symbols-outlined text-lg">cancel</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 7
+              </p>
+              <div class="flex items-center gap-2 text-[#4ADE80]">
+                <span class="text-sm font-medium">Correct</span>
+                <span class="material-symbols-outlined text-lg">check_circle</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 8
+              </p>
+              <div class="flex items-center gap-2 text-[#FF453A]">
+                <span class="text-sm font-medium">Incorrect</span>
+                <span class="material-symbols-outlined text-lg">cancel</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 9
+              </p>
+              <div class="flex items-center gap-2 text-[#4ADE80]">
+                <span class="text-sm font-medium">Correct</span>
+                <span class="material-symbols-outlined text-lg">check_circle</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between bg-[#2C2C2E] p-4 rounded-xl">
+              <p class="text-white text-base font-normal leading-normal">
+                Question 10
+              </p>
+              <div class="flex items-center gap-2 text-[#4ADE80]">
+                <span class="text-sm font-medium">Correct</span>
+                <span class="material-symbols-outlined text-lg">check_circle</span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer class="sticky bottom-0">
+        <div class="px-4 py-6 space-y-3 bg-[#1C1C1E] border-t border-[#363638]">
+          <button
+            class="w-full flex items-center justify-center rounded-xl h-12 px-4 bg-[#FF6600] text-white text-base font-bold leading-normal tracking-[0.015em]"
+          >
+            <span>Review answers</span>
+          </button>
+          <button
+            class="w-full flex items-center justify-center rounded-xl h-12 px-4 bg-[#2C2C2E] text-[#FF6600] text-base font-bold leading-normal tracking-[0.015em]"
+          >
+            <span>Retry category</span>
+          </button>
+          <button
+            class="w-full flex items-center justify-center rounded-xl h-12 px-4 bg-transparent text-white text-base font-bold leading-normal tracking-[0.015em]"
+          >
+            <span>Go Home</span>
+          </button>
+        </div>
+        <div class="flex justify-around border-t border-[#363638] bg-[#1C1C1E] py-2">
+          <a class="flex flex-col items-center justify-end gap-1 text-[#FF6600]" href="#">
+            <span class="material-symbols-outlined">home</span>
+            <p class="text-xs font-medium leading-normal">Home</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 text-[#A0A0A0]"
+            href="#"
+          >
+            <span class="material-symbols-outlined">leaderboard</span>
+            <p class="text-xs font-medium leading-normal">Progress</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-end gap-1 text-[#A0A0A0]"
+            href="#"
+          >
+            <span class="material-symbols-outlined">settings</span>
+            <p class="text-xs font-medium leading-normal">Settings</p>
+          </a>
+        </div>
+        <div class="h-5 bg-[#1C1C1E]"></div>
+      </footer>
+    </div>
+  </body>
+</html>

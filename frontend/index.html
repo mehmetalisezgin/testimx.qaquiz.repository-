@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+  This is the landing page of the TESTIMX QA Quiz mobile/web
+  application.  It presents a simple introduction and a call to
+  action.  The visual design uses TailwindCSS and matches the
+  provided Figma mock‑ups.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TESTIMX QA Quiz</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --bg-color: #121212;
+        --primary-color: #ff6600;
+        --text-color: #ffffff;
+        --subtitle-color: #b0b0b0;
+        --card-bg-color: #1e1e1e;
+      }
+      body {
+        font-family: "Space Grotesk", sans-serif;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--bg-color)] text-[var(--text-color)]">
+    <div class="flex flex-col h-screen justify-between p-6">
+      <div class="flex-grow flex flex-col items-center justify-center text-center">
+        <div class="mb-8">
+          <svg
+            class="text-[var(--primary-color)]"
+            fill="none"
+            height="96"
+            width="96"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+            ></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <h1 class="text-4xl font-bold mb-2">TESTIMX QA Quiz</h1>
+        <p class="text-[var(--subtitle-color)] text-lg">
+          Practice QA &amp; Automation quizzes.
+        </p>
+      </div>
+      <div class="w-full">
+        <button
+          class="w-full bg-[var(--primary-color)] text-white font-bold py-4 px-4 rounded-xl text-lg hover:bg-opacity-90 transition-colors duration-300 shadow-lg shadow-orange-500/20"
+        >
+          Get Started
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

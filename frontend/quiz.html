@@ -1,0 +1,190 @@
+<!--
+  Quiz question screen for TESTIMX QA Quiz.  Displays a single
+  question along with four answer options.  Colours indicate
+  correctness after the user answers, and an explanation overlay
+  appears when the user selects a wrong answer.  The bottom bar
+  contains navigation controls and a progress indicator.
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+      onload="this.rel='stylesheet'"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Quiz – TESTIMX QA Quiz</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27%23ff6600%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');
+      }
+      .quiz-option.correct {
+        background-color: rgba(76, 175, 80, 0.1);
+        border-color: #4caf50;
+      }
+      .quiz-option.incorrect {
+        background-color: rgba(244, 67, 54, 0.1);
+        border-color: #f44336;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-[#121212]">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-[#1c1c1e] dark justify-between group/design-root overflow-hidden"
+      style="font-family: 'Space Grotesk', 'Noto Sans', sans-serif;"
+    >
+      <div class="flex flex-col flex-1">
+        <header class="p-4 sticky top-0 bg-[#1c1c1e]/80 backdrop-blur-sm z-10">
+          <div class="flex items-center justify-between">
+            <button class="text-white">
+              <span class="material-symbols-outlined">arrow_back_ios_new</span>
+            </button>
+            <div class="text-center">
+              <p class="text-sm text-gray-400">Foundations</p>
+              <h2 class="text-white text-lg font-bold">Q 3 of 10</h2>
+            </div>
+            <div class="w-8"></div>
+          </div>
+        </header>
+        <main class="flex-1 px-4 py-6">
+          <h3 class="text-white text-2xl font-bold leading-tight text-left mb-4">
+            Which of the following is NOT a valid assertion in TestimX?
+          </h3>
+          <div class="flex gap-2 mb-6 flex-wrap">
+            <div
+              class="flex h-7 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-[#333333] px-3"
+            >
+              <p class="text-gray-300 text-xs font-medium">Foundations</p>
+            </div>
+            <div
+              class="flex h-7 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-[#333333] px-3"
+            >
+              <p class="text-gray-300 text-xs font-medium">Assertions</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <label
+              class="quiz-option flex items-center gap-4 rounded-xl border border-solid border-[#444] p-4 transition-all duration-200 incorrect"
+            >
+              <input
+                class="h-5 w-5 shrink-0 appearance-none rounded-full border-2 border-[#666] bg-transparent text-transparent checked:border-[#ff6600] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0"
+                type="radio"
+                name="quiz_option"
+                checked
+                disabled
+              />
+              <p class="text-white text-base font-medium flex-1">
+                Assert.isTrue(condition)
+              </p>
+              <span class="material-symbols-outlined text-red-500">close</span>
+            </label>
+            <label
+              class="quiz-option flex items-center gap-4 rounded-xl border border-solid border-[#444] p-4 transition-all duration-200 correct"
+            >
+              <input
+                class="h-5 w-5 shrink-0 appearance-none rounded-full border-2 border-[#666] bg-transparent text-transparent checked:border-[#ff6600] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0"
+                type="radio"
+                name="quiz_option"
+                disabled
+              />
+              <p class="text-white text-base font-medium flex-1">
+                Assert.assertEquals(expected, actual)
+              </p>
+              <span class="material-symbols-outlined text-green-500">check</span>
+            </label>
+            <label
+              class="quiz-option flex items-center gap-4 rounded-xl border border-solid border-[#444] p-4 transition-all duration-200"
+            >
+              <input
+                class="h-5 w-5 shrink-0 appearance-none rounded-full border-2 border-[#666] bg-transparent text-transparent checked:border-[#ff6600] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0"
+                type="radio"
+                name="quiz_option"
+                disabled
+              />
+              <p class="text-white text-base font-medium flex-1">
+                Assert.isFalse(condition)
+              </p>
+            </label>
+            <label
+              class="quiz-option flex items-center gap-4 rounded-xl border border-solid border-[#444] p-4 transition-all duration-200"
+            >
+              <input
+                class="h-5 w-5 shrink-0 appearance-none rounded-full border-2 border-[#666] bg-transparent text-transparent checked:border-[#ff6600] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0"
+                type="radio"
+                name="quiz_option"
+                disabled
+              />
+              <p class="text-white text-base font-medium flex-1">
+                Assert.isNotEqual(expected, actual)
+              </p>
+            </label>
+          </div>
+        </main>
+      </div>
+      <!-- Explanation overlay -->
+      <div
+        class="fixed inset-0 bg-black/70 z-20 flex items-end justify-center transition-opacity opacity-100"
+      >
+        <div
+          class="bg-[#2c2c2e] rounded-t-2xl w-full max-w-md p-6 flex flex-col gap-4 transform translate-y-0 transition-transform duration-300"
+        >
+          <h4 class="text-xl font-bold text-white">Why this is correct</h4>
+          <div class="text-gray-300 space-y-3 text-base">
+            <p>
+              While most testing frameworks provide an `isNotEqual` or
+              similar assertion, TestimX uses a different convention for
+              negativity.
+            </p>
+            <ul class="list-disc list-inside space-y-1 pl-2">
+              <li>It emphasizes direct assertions.</li>
+              <li>Negations are handled using `Assert.isFalse()`.</li>
+            </ul>
+            <p>For example, to check for inequality:</p>
+            <pre class="bg-[#1c1c1e] p-3 rounded-lg text-sm text-gray-200"><code>Assert.isFalse(value1 === value2);</code></pre>
+          </div>
+          <button
+            class="flex w-full items-center justify-center rounded-xl h-12 px-6 bg-[#ff6600] text-white text-base font-bold tracking-wide"
+          >
+            Got it
+          </button>
+        </div>
+      </div>
+      <footer class="p-4 border-t border-[#333] bg-[#1c1c1e]">
+        <div class="flex items-center justify-between gap-4">
+          <button
+            class="flex min-w-[84px] items-center justify-center rounded-xl h-11 px-4 bg-[#333] text-white text-base font-bold"
+          >
+            Previous
+          </button>
+          <div class="flex-1">
+            <div class="h-2 rounded-full bg-[#444]">
+              <div
+                class="h-2 rounded-full bg-[#ff6600]"
+                style="width: 30%;"
+              ></div>
+            </div>
+          </div>
+          <button
+            class="flex min-w-[84px] items-center justify-center rounded-xl h-11 px-4 bg-[#ff6600] text-white text-base font-bold"
+            disabled
+          >
+            Next
+          </button>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
