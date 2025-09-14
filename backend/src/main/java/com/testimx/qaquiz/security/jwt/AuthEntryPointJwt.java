@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  * Handles unauthorised access attempts by returning a 401 status and
- * logging the error.  Registered in the security configuration.
+ * logging a warning. Registered in the security configuration.
  */
 @Component
 public class AuthEntryPointJwt implements AuthenticationEntryPoint {
@@ -22,7 +22,9 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException)
             throws IOException {
-        logger.error("Unauthorized error: {}", authException.getMessage());
+        // Log as a warning rather than an error since unauthenticated requests
+        // are expected to occur and are handled gracefully.
+        logger.warn("Unauthorized error: {}", authException.getMessage());
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Error: Unauthorized");
     }
 }
